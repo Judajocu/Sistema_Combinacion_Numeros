@@ -52,16 +52,11 @@ public class Combination
         return num;
     }
 
-    static void Result2txt(int[] result, String FileName) throws IOException {
+    static void Result2txt(List<Set<Integer>> result, String FileName) throws IOException {
         BufferedWriter outputWriter = null;
         outputWriter = new BufferedWriter(new FileWriter(FileName));
-        for (int i = 0; i < result.length; i++) {
-            // Maybe:
-            outputWriter.write(result[i]+"");
-            // Or:
-            outputWriter.write(Integer.toString(result[i]));
-            outputWriter.newLine();
-        }
+        outputWriter.write(result.toString());
+        outputWriter.newLine();
         outputWriter.flush();
         outputWriter.close();
     }
@@ -70,10 +65,12 @@ public class Combination
         public static void main (String[] args) {
             String arr = "1 2 3 4 5";
             List<Integer> dat = new ArrayList<>();
+            List<Set<Integer>> result = new ArrayList<>();
             String r = "3";
             int size = String2Int(r);
             dat = StringArr2Int(arr);
-            System.out.println(getSubsets(dat,size));
+            result = getSubsets(dat,size);
+            System.out.print(result);
         }
 
 
