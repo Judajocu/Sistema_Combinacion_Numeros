@@ -61,17 +61,6 @@ public class Combination
         outputWriter.close();
     }
 
-        /*Driver function to check for above function*/
-        public static void main (String[] args) {
-            String arr = "1 2 3 4 5";
-            List<Integer> dat = new ArrayList<>();
-            List<Set<Integer>> result = new ArrayList<>();
-            String r = "3";
-            int size = String2Int(r);
-            dat = StringArr2Int(arr);
-            result = getSubsets(dat,size);
-            System.out.print(result);
-        }
 
 
 }
