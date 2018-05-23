@@ -16,6 +16,8 @@ public class Name extends javax.swing.JFrame {
      */
     public Name() {
         initComponents();
+        Main prin = new Main();
+        prin.setVisible(true);
     }
 
     /**
