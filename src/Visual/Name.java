@@ -5,6 +5,11 @@
  */
 package Visual;
 
+import SCN.Combination;
+
+import javax.swing.*;
+import java.io.IOException;
+
 /**
  *
  * @author judajocu
@@ -14,10 +19,10 @@ public class Name extends javax.swing.JFrame {
     /**
      * Creates new form Name
      */
-    public Name() {
+    String results;
+    public Name(String resultsparam) {
         initComponents();
-        Main prin = new Main();
-        prin.setVisible(true);
+        this.results = resultsparam;
     }
 
     /**
@@ -33,7 +38,7 @@ public class Name extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Nombre del archivo");
 
@@ -76,15 +81,26 @@ public class Name extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Combination combination = new Combination();
+        try {
+            combination.Result2txt(results,jTextField1.getText());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+    /*public static void main(String args[]) {
+        *//* Set the Nimbus look and feel *//*
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        *//* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+         *//*
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -103,17 +119,17 @@ public class Name extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        *//* Create and display the form *//*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Name().setVisible(true);
+                new Name(null).setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

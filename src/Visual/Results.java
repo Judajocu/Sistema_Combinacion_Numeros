@@ -5,6 +5,8 @@
  */
 package Visual;
 
+import SCN.Combination;
+
 /**
  *
  * @author judajocu
@@ -14,6 +16,7 @@ public class Results extends javax.swing.JFrame {
     /**
      * Creates new form Results
      */
+    public String texto;
     public Results() {
         initComponents();
     }
@@ -110,21 +113,28 @@ public class Results extends javax.swing.JFrame {
 
     private void exportartxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportartxtActionPerformed
         // TODO add your handling code here:
+        Name name = new Name(jTextArea1.getText());
+        name.setVisible(true);
+        name.setLocationRelativeTo(null);
     }//GEN-LAST:event_exportartxtActionPerformed
 
     private void repetirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repetirActionPerformed
         // TODO add your handling code here:
+        MainVisual mainVisual = new MainVisual();
+        mainVisual.setLocationRelativeTo(null);
+        mainVisual.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_repetirActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+   /* public static void main(String args[]) {
+        *//* Set the Nimbus look and feel *//*
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        *//* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+         *//*
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -143,20 +153,20 @@ public class Results extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        *//* Create and display the form *//*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Results().setVisible(true);
             }
         });
-    }
+    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exportarexcel;
     private javax.swing.JButton exportartxt;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    public javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton repetir;
     // End of variables declaration//GEN-END:variables
 }

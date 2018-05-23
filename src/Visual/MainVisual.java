@@ -5,6 +5,9 @@
  */
 package Visual;
 
+import SCN.Combination;
+import sun.java2d.Disposer;
+
 /**
  *
  * @author judajocu
@@ -16,6 +19,7 @@ public class MainVisual extends javax.swing.JFrame {
      */
     public MainVisual() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -107,10 +111,21 @@ public class MainVisual extends javax.swing.JFrame {
 
     private void combinarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combinarActionPerformed
         // TODO add your handling code here:
+        String spinnervalue = spinnercomb.getValue().toString();
+        String texto = jTextArea1.getText();
+
+        Combination combination = new Combination();
+
+
+        Results results = new Results();
+        results.jTextArea1.setText(combination.getSubsets(combination.StringArr2Int(texto),combination.String2Int(spinnervalue)).toString());
+        results.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_combinarActionPerformed
 
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_salirActionPerformed
 
     /**
