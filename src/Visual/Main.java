@@ -132,3 +132,5 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
+
+    
