@@ -54,11 +54,16 @@ public class Combination
 
     static void Result2txt(List<Set<Integer>> result, String FileName) throws IOException {
         BufferedWriter outputWriter = null;
-        outputWriter = new BufferedWriter(new FileWriter(FileName));
+        outputWriter = new BufferedWriter(new FileWriter(FileName+".txt"));
         outputWriter.write(result.toString());
         outputWriter.newLine();
         outputWriter.flush();
         outputWriter.close();
+    }
+
+    static void Result2xsl(List<Set<Integer>> result, String FileName)
+    {
+
     }
 
     public static void main(String[] args) {
