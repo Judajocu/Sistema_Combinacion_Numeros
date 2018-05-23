@@ -7,7 +7,6 @@ package Visual;
 
 import SCN.Combination;
 
-import javax.swing.*;
 import java.io.IOException;
 
 /**
@@ -38,11 +37,16 @@ public class Name extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Nombre del archivo");
 
         jButton1.setText("Ok");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,7 +99,7 @@ public class Name extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    /*public static void main(String args[]) {
+   /* public static void main(String args[]) {
         *//* Set the Nimbus look and feel *//*
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         *//* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -122,7 +126,7 @@ public class Name extends javax.swing.JFrame {
         *//* Create and display the form *//*
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Name(null).setVisible(true);
+                new Name().setVisible(true);
             }
         });
     }*/
@@ -130,6 +134,6 @@ public class Name extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    public javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
