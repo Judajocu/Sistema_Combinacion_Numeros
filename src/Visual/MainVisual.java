@@ -120,6 +120,7 @@ public class MainVisual extends javax.swing.JFrame {
         Results results = new Results();
         results.jTextArea1.setText(combination.getSubsets(combination.StringArr2Int(texto),combination.String2Int(spinnervalue)).toString());
         results.setVisible(true);
+        results.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_combinarActionPerformed
 

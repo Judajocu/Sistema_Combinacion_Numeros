@@ -1,6 +1,7 @@
 package SCN;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,7 +55,9 @@ public class Combination
 
     public void Result2txt(String result, String FileName) throws IOException {
         BufferedWriter outputWriter = null;
-        outputWriter = new BufferedWriter(new FileWriter(FileName+".txt"));
+        String HomeFolder = System.getProperty("user.home");
+        File txtField = new File(HomeFolder,FileName);
+        outputWriter = new BufferedWriter(new FileWriter(txtField));
         outputWriter.write(result);
         outputWriter.newLine();
         outputWriter.flush();
