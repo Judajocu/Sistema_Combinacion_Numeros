@@ -55,7 +55,7 @@ public class Combination
 
     public void Result2txt(String result, String FileName) throws IOException {
         BufferedWriter outputWriter = null;
-        String HomeFolder = System.getProperty("user.home");
+        String HomeFolder = System.getProperty("user.home")+ "/Desktop";
         File txtField = new File(HomeFolder,FileName);
         outputWriter = new BufferedWriter(new FileWriter(txtField));
         outputWriter.write(result);
