@@ -56,7 +56,7 @@ public class Combination
     public void Result2txt(String result, String FileName) throws IOException {
         BufferedWriter outputWriter = null;
         String HomeFolder = System.getProperty("user.home")+ "/Desktop";
-        File txtField = new File(HomeFolder,FileName);
+        File txtField = new File(HomeFolder,FileName+".txt");
         outputWriter = new BufferedWriter(new FileWriter(txtField));
         outputWriter.write(result);
         outputWriter.newLine();
@@ -64,9 +64,23 @@ public class Combination
         outputWriter.close();
     }
 
-    public void Result2xsl(String result, String FileName)
-    {
+    public void Result2csv(List<Set<Integer>> result, String FileName) throws IOException {
+        String textResult = "";
+        for (Set<Integer> s : result){
 
+            for (Integer i : s) {
+                textResult= textResult.concat(i+", ");
+            }
+            textResult=textResult.substring(0,textResult.length()-1).concat("\n");
+        }
+        BufferedWriter outputWriter = null;
+        String HomeFolder = System.getProperty("user.home")+ "/Desktop";
+        File txtField = new File(HomeFolder,FileName+".csv");
+        outputWriter = new BufferedWriter(new FileWriter(txtField));
+        outputWriter.write(textResult);
+        outputWriter.newLine();
+        outputWriter.flush();
+        outputWriter.close();
     }
 
    /* public static void main(String[] args) {
