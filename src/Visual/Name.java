@@ -8,6 +8,8 @@ package Visual;
 import SCN.Combination;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -18,9 +20,11 @@ public class Name extends javax.swing.JFrame {
     /**
      * Creates new form Name
      */
-    String results;
-    public Name(String resultsparam) {
+    String fileType;
+    public List<Set<Integer>>  results;
+    public Name(List<Set<Integer>> resultsparam, String fileType) {
         initComponents();
+        this.fileType = fileType;
         this.results = resultsparam;
     }
 
@@ -89,7 +93,12 @@ public class Name extends javax.swing.JFrame {
         // TODO add your handling code here:
         Combination combination = new Combination();
         try {
-            combination.Result2txt(results,jTextField1.getText());
+            if (fileType.equals("txt")){
+                combination.Result2txt(results.toString(),jTextField1.getText());
+            }
+            if (fileType.equals("csv")){
+                combination.Result2csv(results,jTextField1.getText());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

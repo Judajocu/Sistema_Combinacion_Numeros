@@ -7,6 +7,9 @@ package Visual;
 
 import SCN.Combination;
 
+import java.util.List;
+import java.util.Set;
+
 /**
  *
  * @author judajocu
@@ -16,9 +19,11 @@ public class Results extends javax.swing.JFrame {
     /**
      * Creates new form Results
      */
-    public String texto;
-    public Results() {
+    public List<Set<Integer>>  results;
+    public Results(List<Set<Integer>> resultsparam) {
         initComponents();
+        this.results = resultsparam;
+        this.jTextArea1.setText(resultsparam.toString());
     }
 
     /**
@@ -109,11 +114,14 @@ public class Results extends javax.swing.JFrame {
 
     private void exportarexcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportarexcelActionPerformed
         // TODO add your handling code here:
+        Name name = new Name(results,"csv");
+        name.setVisible(true);
+        name.setLocationRelativeTo(null);
     }//GEN-LAST:event_exportarexcelActionPerformed
 
     private void exportartxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exportartxtActionPerformed
         // TODO add your handling code here:
-        Name name = new Name(jTextArea1.getText());
+        Name name = new Name(results,"txt");
         name.setVisible(true);
         name.setLocationRelativeTo(null);
     }//GEN-LAST:event_exportartxtActionPerformed
